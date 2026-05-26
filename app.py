@@ -134,9 +134,10 @@ def init_db():
         password TEXT NOT NULL, brand TEXT NOT NULL, role TEXT NOT NULL, created TEXT NOT NULL)""")
     conn.execute("""CREATE TABLE IF NOT EXISTS sessions (
         id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, season TEXT NOT NULL,
-        date TEXT NOT NULL, summary TEXT,
-        order_data TEXT, alloc_data TEXT, inventory_data TEXT,
-        slow_data TEXT, defect_data TEXT, return_data TEXT)""")
+        date TEXT NOT NULL, summary TEXT)""")
+    for col in ['order_data','alloc_data','inventory_data','slow_data','defect_data','return_data']:
+        try: conn.execute(f"ALTER TABLE sessions ADD COLUMN {col} TEXT")
+        except: pass
     conn.commit(); conn.close()
 
 init_db()
