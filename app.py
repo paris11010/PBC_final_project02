@@ -409,7 +409,7 @@ if user is None: st.session_state.clear();st.rerun()
 st.sidebar.markdown(f"### 👤 {user['username']}")
 st.sidebar.markdown(f"**品牌：** {user['brand']}　**角色：** {user['role']}")
 st.sidebar.divider()
-nav=st.sidebar.selectbox("選擇功能模組",["🏠 首頁","📊 銷售分析","📈 採購數量建議","📋 Assortment 生成","🏬 配貨與調撥","🏷️ 滯銷品處置","🔧 瑕疵品與退換貨"])
+nav=st.sidebar.selectbox("選擇功能模組",["🏠 首頁","📊 銷售分析","📈 採購數量建議","📋 Assortment 生成","🏬 銷售概況與門市配貨","🏷️ 滯銷品處置","🔧 瑕疵品與退換貨"])
 if st.sidebar.button("🚪 登出"): st.session_state.clear();st.rerun()
 
 # ============================================================
