@@ -548,10 +548,10 @@ elif nav=="📋 Assortment 生成":
     show_history(user["id"],"Assortment","Assortment")
 
 # ============================================================
-# 4. 配貨與調撥
+# 4. 銷售概況與門市配貨
 # ============================================================
-elif nav=="🏬 配貨與調撥":
-    st.title("🏬 配貨與門市調撥")
+elif nav=="🏬 銷售概況與門市配貨":
+    st.title("🏬 銷售概況與門市配貨")
     st.markdown("上傳三個檔案，系統自動計算配貨量並產出調撥建議。")
     c1,c2,c3=st.columns(3)
     with c1: f4a=st.file_uploader("Assortment 清單",type=["xlsx"],key="p4a")
